@@ -1,37 +1,3 @@
-// const title = document.querySelector(".hello:first-child h1");
-// const h1 = document.querySelector("div.hello:first-child h1");
-
-// function handleTitleClick() {
-//     title.innerText = "Click!";
-
-//     const clickedClassName = "clicked";
-//     // if (h1.classList.contains(clickedClassName)){
-//     //     h1.classList.remove(clickedClassName);
-//     // }else{
-//     //     h1.classList.add(clickedClassName);
-//     // };
-//     h1.classList.toggle(clickedClassName);
-// }
-// function handleMouseEnter() {
-//     title.innerText = "Mouse is here!";
-// }
-// function handleMouseLeave() {
-//     title.innerText = "Mouse is gone!";
-// }
-
-// title.onclick = handleTitleClick;
-// title.addEventListener("mouseenter", handleMouseEnter);
-// title.addEventListener("mouseleave", handleMouseLeave);
-
-// function handleWindowResize() {
-//     document.body.style.backgroundColor = "tomato";
-// }
-
-// window.addEventListener("resize", handleWindowResize);
-
-// h1.addEventListener("onclick", handleTitleClick);
-
-//------------------------------------
 const loginForm = document.getElementById("login-form");
 const loginInput = loginForm.querySelector("input");
 const loginButton = document.querySelector("#login-form button");
@@ -49,6 +15,7 @@ function onLoginSubmit(event) {
 }
 
 loginButton.addEventListener("click", onLoginSubmit);
+loginForm.addEventListener("submit", onLoginSubmit);
 
 function login(username) {
     //로그인폼을 숨김

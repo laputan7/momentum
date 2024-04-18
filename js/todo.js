@@ -8,21 +8,24 @@ let todos = [];
 function handleTodoSubmit(event) {
     event.preventDefault();
 
-    //const newTodo = todoInput.value;
-    //오브젝트로 처리
-    const newObjTodo = {
-        id: Date.now(),
-        text: todoInput.value,
+    //입력값 공백 검증
+    if (todoInput.value !== "") {
+        //const newTodo = todoInput.value;
+        //오브젝트로 처리
+        const newObjTodo = {
+            id: Date.now(),
+            text: todoInput.value,
+        }
+
+        //li 추가
+        printTodos(newObjTodo);
+
+        //로컬스토리지에 저장
+        saveTodos(newObjTodo);
+
+        //입력창 클리어
+        todoInput.value = "";
     }
-
-    //li 추가
-    printTodos(newObjTodo);
-
-    //로컬스토리지에 저장
-    saveTodos(newObjTodo);
-
-    //입력창 클리어
-    todoInput.value = "";
 }
 
 function printTodos(newObjTodo) {
@@ -55,7 +58,7 @@ function deleteTodo(event) {
     //삭제한 항목의 배열 위치를 찾음
     const idx = todos.findIndex(todo => parseInt(todo.id) === parseInt(li.id));
     //찾았을때
-    if ( idx !== -1) {
+    if (idx !== -1) {
         //해당 위치 항목 삭제
         todos.splice(idx, 1);
 
